@@ -2,8 +2,8 @@ export type Lang = 'en' | 'fr' | 'ar';
 
 export const DICT = {
   en: {
-    dir: 'ltr',
-    brand: 'Take Care',
+    dir: 'rtl',
+    brand: 'أتهلا في صحتك',
     nav: { home: 'Home', about: 'About Us', services: 'Services', contact: 'Contact Us', login: 'Log In', signup: 'Sign Up' },
     hero: {
       title: 'Expert Medical Care, Anytime, Anywhere.',
@@ -109,8 +109,8 @@ export const DICT = {
     }
   },
   fr: {
-    dir: 'ltr',
-    brand: 'Prenez Soin',
+    dir: 'rtl',
+    brand: 'أتهلا في صحتك',
     nav: { home: 'Accueil', about: 'À Propos', services: 'Services', contact: 'Contact', login: 'Connexion', signup: 'S\'inscrire' },
     hero: {
       title: 'Des soins médicaux experts, à tout moment.',

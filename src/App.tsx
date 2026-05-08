@@ -64,11 +64,19 @@ export default function App() {
   const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false);
   const [wilayaSearch, setWilayaSearch] = useState('');
   const [showWilayaDropdown, setShowWilayaDropdown] = useState(false);
+  const [showSplash, setShowSplash] = useState(true);
   
   const filteredWilayas = WILAYAS.filter(w => w.includes(wilayaSearch));
   
   const t = DICT[lang];
   const isRTL = t.dir === 'rtl';
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     document.documentElement.dir = t.dir;
@@ -87,6 +95,19 @@ export default function App() {
   };
 
   const ArrowIcon = isRTL ? ArrowLeft : ArrowRight;
+
+  if (showSplash) {
+    return (
+      <div className={`min-h-screen bg-emerald-600 dark:bg-emerald-950 flex flex-col items-center justify-center text-white transition-colors duration-300 ${isRTL ? 'font-arabic' : ''}`}>
+        <div className="animate-bounce mb-8 shadow-[0_0_40px_rgba(255,255,255,0.4)] dark:shadow-[0_0_40px_rgba(16,185,129,0.3)] bg-white/20 dark:bg-emerald-800/40 p-8 rounded-[3rem] backdrop-blur-md">
+          <Heart className="w-24 h-24 text-white drop-shadow-xl" />
+        </div>
+        <h1 className="text-5xl md:text-7xl font-black tracking-tight drop-shadow-2xl animate-pulse text-center px-4">
+          {t.brand}
+        </h1>
+      </div>
+    );
+  }
 
   if (view === 'patient_dashboard') {
     return <PatientDashboard lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} onLogout={() => setView('landing')} />;
@@ -151,12 +172,12 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-12">
           <div className="flex justify-between items-center py-6">
             {/* Brand */}
-            <div className="flex items-center gap-3 cursor-pointer" onClick={() => setView('landing')}>
-              <div className="w-10 h-10 bg-emerald-600 dark:bg-emerald-50 dark:bg-emerald-900/300 rounded-lg flex items-center justify-center transition-colors">
-                <Heart className="w-6 h-6 text-white" />
+            <div className="flex items-center gap-3 cursor-pointer group" onClick={() => setView('landing')}>
+              <div className="w-10 h-10 bg-emerald-600 dark:bg-emerald-800 rounded-lg flex items-center justify-center transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.5)] dark:shadow-[0_0_15px_rgba(16,185,129,0.3)] animate-glow-pulse group-hover:scale-105">
+                <Heart className="w-6 h-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.7)]" />
               </div>
-              <span className={`text-2xl font-bold text-emerald-900 dark:text-slate-100 tracking-tight transition-colors ${isRTL ? 'font-arabic' : ''}`}>
-                {t.brand}
+              <span className={`text-2xl font-bold text-emerald-900 dark:text-emerald-50 tracking-tight transition-all duration-300 [text-shadow:0_0_15px_rgba(16,185,129,0.4)] dark:[text-shadow:0_0_15px_rgba(16,185,129,0.5)] group-hover:[text-shadow:0_0_20px_rgba(16,185,129,0.7)] font-arabic`}>
+                أتهلا في صحتك
               </span>
             </div>
 
@@ -452,11 +473,11 @@ export default function App() {
               <ul className="space-y-4 font-medium">
                 <li className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-emerald-900/50 flex items-center justify-center text-emerald-400"><Clock className="w-4 h-4" /></div>
-                  <span dir="ltr">contact@atahala.dz</span>
+                  <span dir="ltr">contact@gmail.com</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-emerald-900/50 flex items-center justify-center text-emerald-400"><Phone className="w-4 h-4" /></div>
-                  <span dir="ltr">+213 555 123 456</span>
+                  <span dir="ltr">0792762144</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-emerald-900/50 flex items-center justify-center text-emerald-400"><MapPin className="w-4 h-4" /></div>

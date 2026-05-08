@@ -57,8 +57,8 @@ export default function BookAppointment({ lang, theme, onBack }: BookAppointment
                   {isAR ? 'اختيار الولاية' : 'Wilaya / State'}
                 </label>
                 <div className="relative">
-                  <MapPin className={`absolute top-1/2 -translate-y-1/2 ${isAR ? 'right-4' : 'left-4'} w-5 h-5 text-slate-400`} />
-                  <select defaultValue="" className={`w-full appearance-none ${inputBg} rounded-2xl py-4 ${isAR ? 'pr-12 pl-4' : 'pl-12 pr-4'} outline-none focus:ring-2 focus:ring-emerald-500 font-medium transition-all cursor-pointer`}>
+                  <MapPin className={`absolute top-1/2 -translate-y-1/2 ${'right-4'} w-5 h-5 text-slate-400`} />
+                  <select defaultValue="" className={`w-full appearance-none ${inputBg} rounded-2xl py-4 ${'pr-12 pl-4'} outline-none focus:ring-2 focus:ring-emerald-500 font-medium transition-all cursor-pointer`}>
                     <option value="" disabled>{isAR ? 'ولاية الجزائر' : 'Algiers'}</option>
                   </select>
                 </div>
@@ -70,8 +70,8 @@ export default function BookAppointment({ lang, theme, onBack }: BookAppointment
                   {isAR ? 'اختيار البلدية' : 'Municipality'}
                 </label>
                 <div className="relative">
-                  <Building className={`absolute top-1/2 -translate-y-1/2 ${isAR ? 'right-4' : 'left-4'} w-5 h-5 text-slate-400`} />
-                  <select defaultValue="" className={`w-full appearance-none ${inputBg} rounded-2xl py-4 ${isAR ? 'pr-12 pl-4' : 'pl-12 pr-4'} outline-none focus:ring-2 focus:ring-emerald-500 font-medium transition-all cursor-pointer`}>
+                  <Building className={`absolute top-1/2 -translate-y-1/2 ${'right-4'} w-5 h-5 text-slate-400`} />
+                  <select defaultValue="" className={`w-full appearance-none ${inputBg} rounded-2xl py-4 ${'pr-12 pl-4'} outline-none focus:ring-2 focus:ring-emerald-500 font-medium transition-all cursor-pointer`}>
                     <option value="" disabled>{isAR ? 'الجزائر الوسطى' : 'Algiers Center'}</option>
                   </select>
                 </div>
@@ -83,8 +83,8 @@ export default function BookAppointment({ lang, theme, onBack }: BookAppointment
                   {isAR ? 'اختيار التخصص' : 'Specialty'}
                 </label>
                 <div className="relative">
-                  <Stethoscope className={`absolute top-1/2 -translate-y-1/2 ${isAR ? 'right-4' : 'left-4'} w-5 h-5 text-slate-400`} />
-                  <select defaultValue="" className={`w-full appearance-none ${inputBg} rounded-2xl py-4 ${isAR ? 'pr-12 pl-4' : 'pl-12 pr-4'} outline-none focus:ring-2 focus:ring-emerald-500 font-medium transition-all cursor-pointer`}>
+                  <Stethoscope className={`absolute top-1/2 -translate-y-1/2 ${'right-4'} w-5 h-5 text-slate-400`} />
+                  <select defaultValue="" className={`w-full appearance-none ${inputBg} rounded-2xl py-4 ${'pr-12 pl-4'} outline-none focus:ring-2 focus:ring-emerald-500 font-medium transition-all cursor-pointer`}>
                     <option value="" disabled>{isAR ? 'أمراض القلب' : 'Cardiology'}</option>
                   </select>
                 </div>
@@ -96,8 +96,8 @@ export default function BookAppointment({ lang, theme, onBack }: BookAppointment
                   {isAR ? 'اختيار الطبيب' : 'Doctor'}
                 </label>
                 <div className="relative">
-                  <User className={`absolute top-1/2 -translate-y-1/2 ${isAR ? 'right-4' : 'left-4'} w-5 h-5 text-slate-400`} />
-                  <select defaultValue="" className={`w-full appearance-none ${inputBg} rounded-2xl py-4 ${isAR ? 'pr-12 pl-4' : 'pl-12 pr-4'} outline-none focus:ring-2 focus:ring-emerald-500 font-medium transition-all cursor-pointer`}>
+                  <User className={`absolute top-1/2 -translate-y-1/2 ${'right-4'} w-5 h-5 text-slate-400`} />
+                  <select defaultValue="" className={`w-full appearance-none ${inputBg} rounded-2xl py-4 ${'pr-12 pl-4'} outline-none focus:ring-2 focus:ring-emerald-500 font-medium transition-all cursor-pointer`}>
                     <option value="" disabled>{isAR ? 'د. محمد بوزيد' : 'Dr. Mohamed'}</option>
                   </select>
                 </div>

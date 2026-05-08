@@ -57,8 +57,8 @@ export default function BookConsultation({ lang, theme, onBack }: BookConsultati
                   {isAR ? 'الاستشارة لـ' : 'Consultation for'}
                 </label>
                 <div className="relative">
-                  <User className={`absolute top-1/2 -translate-y-1/2 ${isAR ? 'right-4' : 'left-4'} w-5 h-5 text-slate-400`} />
-                  <select defaultValue="" className={`w-full appearance-none ${inputBg} rounded-2xl py-4 ${isAR ? 'pr-12 pl-4' : 'pl-12 pr-4'} outline-none focus:ring-2 focus:ring-emerald-500 font-medium transition-all cursor-pointer`}>
+                  <User className={`absolute top-1/2 -translate-y-1/2 ${'right-4'} w-5 h-5 text-slate-400`} />
+                  <select defaultValue="" className={`w-full appearance-none ${inputBg} rounded-2xl py-4 ${'pr-12 pl-4'} outline-none focus:ring-2 focus:ring-emerald-500 font-medium transition-all cursor-pointer`}>
                     <option value="" disabled>{isAR ? 'نفسي (أحمد)' : 'Myself'}</option>
                   </select>
                 </div>
@@ -70,8 +70,8 @@ export default function BookConsultation({ lang, theme, onBack }: BookConsultati
                   {isAR ? 'اختيار التخصص' : 'Specialty'}
                 </label>
                 <div className="relative">
-                  <Stethoscope className={`absolute top-1/2 -translate-y-1/2 ${isAR ? 'right-4' : 'left-4'} w-5 h-5 text-slate-400`} />
-                  <select defaultValue="" className={`w-full appearance-none ${inputBg} rounded-2xl py-4 ${isAR ? 'pr-12 pl-4' : 'pl-12 pr-4'} outline-none focus:ring-2 focus:ring-emerald-500 font-medium transition-all cursor-pointer`}>
+                  <Stethoscope className={`absolute top-1/2 -translate-y-1/2 ${'right-4'} w-5 h-5 text-slate-400`} />
+                  <select defaultValue="" className={`w-full appearance-none ${inputBg} rounded-2xl py-4 ${'pr-12 pl-4'} outline-none focus:ring-2 focus:ring-emerald-500 font-medium transition-all cursor-pointer`}>
                     <option value="" disabled>{isAR ? 'الطب العام' : 'General Practice'}</option>
                   </select>
                 </div>
@@ -83,11 +83,11 @@ export default function BookConsultation({ lang, theme, onBack }: BookConsultati
                   {isAR ? 'وصف الحالة' : 'Symptoms'}
                 </label>
                 <div className="relative">
-                  <MessageSquare className={`absolute top-5 ${isAR ? 'right-4' : 'left-4'} w-5 h-5 text-slate-400`} />
+                  <MessageSquare className={`absolute top-5 ${'right-4'} w-5 h-5 text-slate-400`} />
                   <textarea 
                     rows={4}
                     placeholder={isAR ? 'يرجى وصف الأعراض باختصار...' : 'Describe your symptoms...'}
-                    className={`w-full ${inputBg} rounded-2xl py-4 ${isAR ? 'pr-12 pl-4' : 'pl-12 pr-4'} outline-none focus:ring-2 focus:ring-emerald-500 font-medium transition-all resize-none placeholder:text-slate-400`}
+                    className={`w-full ${inputBg} rounded-2xl py-4 ${'pr-12 pl-4'} outline-none focus:ring-2 focus:ring-emerald-500 font-medium transition-all resize-none placeholder:text-slate-400`}
                   ></textarea>
                 </div>
               </div>

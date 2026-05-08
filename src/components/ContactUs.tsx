@@ -87,7 +87,7 @@ export default function ContactUs({ lang, isRTL }: { lang: Lang; isRTL: boolean 
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-1">{t.phone}</h4>
-                    <p className="text-emerald-100" dir="ltr">+213 555 123 456</p>
+                    <p className="text-emerald-100" dir="ltr">0792762144</p>
                   </div>
                 </div>
 
@@ -97,7 +97,7 @@ export default function ContactUs({ lang, isRTL }: { lang: Lang; isRTL: boolean 
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-1">{t.emailLabel}</h4>
-                    <p className="text-emerald-100" dir="ltr">contact@atahala.dz</p>
+                    <p className="text-emerald-100" dir="ltr">contact@gmail.com</p>
                   </div>
                 </div>
               </div>

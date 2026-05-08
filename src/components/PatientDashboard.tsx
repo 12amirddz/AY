@@ -48,7 +48,7 @@ export default function PatientDashboard({ lang, setLang, theme, setTheme, onLog
 
   if (isFullScreenView) {
     return (
-      <div className={`min-h-screen ${bgClass} ${textClass} relative overflow-y-auto font-sans`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+      <div className={`min-h-screen ${bgClass} ${textClass} relative overflow-y-auto font-sans`} dir={DICT[lang].dir}>
         <div className="w-full p-4 lg:p-10">
           {activeTab === 'appointments' ? (
             <BookAppointment lang={lang} theme={theme} onBack={() => setActiveTab('home')} />
@@ -172,9 +172,9 @@ export default function PatientDashboard({ lang, setLang, theme, setTheme, onLog
   }
 
   return (
-    <div className={`min-h-screen ${bgClass} ${textClass} flex font-sans transition-colors duration-300`} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+    <div className={`min-h-screen ${bgClass} ${textClass} flex font-sans transition-colors duration-300`} dir={DICT[lang].dir}>
       {/* Sidebar */}
-      <aside className={`fixed lg:static inset-y-0 ${lang === 'ar' ? 'right-0' : 'left-0'} z-50 w-72 ${sidebarBg} flex flex-col border-x ${borderClass} transition-transform duration-300 ${sidebarOpen ? 'translate-x-0' : (lang === 'ar' ? 'translate-x-full' : '-translate-x-full')} lg:translate-x-0 shadow-2xl lg:shadow-none`}>
+      <aside className={`fixed lg:static inset-y-0 ${true ? 'right-0' : 'left-0'} z-50 w-72 ${sidebarBg} flex flex-col border-x ${borderClass} transition-transform duration-300 ${sidebarOpen ? 'translate-x-0' : (true ? 'translate-x-full' : '-translate-x-full')} lg:translate-x-0 shadow-2xl lg:shadow-none`}>
         {/* Logo */}
         <div className={`h-20 border-b ${borderClass} flex items-center justify-between px-6 shrink-0`}>
              <div className="flex items-center gap-3">
@@ -234,11 +234,11 @@ export default function PatientDashboard({ lang, setLang, theme, setTheme, onLog
               <Menu className="w-6 h-6" />
             </button>
             <div className="relative hidden md:block w-96">
-              <Search className={`absolute ${lang === 'ar' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5`} />
+              <Search className={`absolute ${true ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5`} />
               <input 
                 type="text"
                 placeholder={t.searchPlaceholder}
-                className={`w-full ${isDark ? 'bg-slate-800 border-slate-700 text-white focus:bg-slate-900' : 'bg-slate-50/80 border-slate-200/60 text-slate-700 focus:bg-white'} border rounded-2xl py-3 ${lang === 'ar' ? 'pr-12 pl-4' : 'pl-12 pr-4'} text-sm font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all placeholder:text-slate-400`}
+                className={`w-full ${isDark ? 'bg-slate-800 border-slate-700 text-white focus:bg-slate-900' : 'bg-slate-50/80 border-slate-200/60 text-slate-700 focus:bg-white'} border rounded-2xl py-3 ${true ? 'pr-12 pl-4' : 'pl-12 pr-4'} text-sm font-medium focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all placeholder:text-slate-400`}
               />
             </div>
           </div>
@@ -282,14 +282,14 @@ export default function PatientDashboard({ lang, setLang, theme, setTheme, onLog
 
             <button className={`relative p-2 text-slate-600 dark:text-slate-400 hover:${isDark ? 'bg-slate-800' : 'bg-slate-50'} rounded-xl transition-colors`}>
               <MessageSquare className="w-6 h-6" />
-              <span className={`absolute top-1.5 ${lang === 'ar' ? 'right-1.5' : 'left-1.5'} w-2 h-2 bg-emerald-500 border-2 ${isDark ? 'border-slate-900' : 'border-white'} rounded-full box-content`}></span>
+              <span className={`absolute top-1.5 ${true ? 'right-1.5' : 'left-1.5'} w-2 h-2 bg-emerald-500 border-2 ${isDark ? 'border-slate-900' : 'border-white'} rounded-full box-content`}></span>
             </button>
             <button className={`relative p-2 text-slate-600 dark:text-slate-400 hover:${isDark ? 'bg-slate-800' : 'bg-slate-50'} rounded-xl transition-colors`}>
               <Bell className="w-6 h-6" />
-              <span className={`absolute top-1 ${lang === 'ar' ? 'right-1' : 'left-1'} w-4 h-4 bg-red-500 text-white text-[9px] font-bold flex items-center justify-center border-2 ${isDark ? 'border-slate-900' : 'border-white'} rounded-full box-content`}>3</span>
+              <span className={`absolute top-1 ${true ? 'right-1' : 'left-1'} w-4 h-4 bg-red-500 text-white text-[9px] font-bold flex items-center justify-center border-2 ${isDark ? 'border-slate-900' : 'border-white'} rounded-full box-content`}>3</span>
             </button>
             
-            <button className={`flex items-center gap-3 hover:${isDark ? 'bg-slate-800' : 'bg-slate-50'} p-1.5 rounded-2xl transition-colors ${lang === 'ar' ? 'pr-3' : 'pl-3'}`}>
+            <button className={`flex items-center gap-3 hover:${isDark ? 'bg-slate-800' : 'bg-slate-50'} p-1.5 rounded-2xl transition-colors ${true ? 'pr-3' : 'pl-3'}`}>
               <img src="https://ui-avatars.com/api/?name=Ahmed&background=f8fafc&color=0f172a&rounded=true&bold=true" alt="Ahmed" className={`w-10 h-10 rounded-full border-2 ${borderClass}`} />
               <div className="hidden sm:block px-2">
                 <p className={`text-sm font-black mb-0.5 leading-none ${isDark ? 'text-white' : 'text-slate-800'}`}>أحمد</p>
@@ -306,9 +306,9 @@ export default function PatientDashboard({ lang, setLang, theme, setTheme, onLog
             
             {/* Hero Section */}
             <div className={`bg-[#e8f6f3] dark:bg-emerald-900/20 rounded-[2.5rem] overflow-hidden relative border border-emerald-100/50 dark:border-emerald-800/30`}>
-              <div className={`absolute top-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/40 dark:from-emerald-900/10 via-transparent to-transparent ${lang === 'ar' ? 'right-0' : 'left-0'}`}></div>
+              <div className={`absolute top-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/40 dark:from-emerald-900/10 via-transparent to-transparent ${true ? 'right-0' : 'left-0'}`}></div>
               {/* Decorative dots */}
-              <div className={`absolute top-1/2 -translate-y-1/2 ${lang === 'ar' ? 'right-1/3' : 'left-1/3'} grid grid-cols-5 gap-2 opacity-10`}>
+              <div className={`absolute top-1/2 -translate-y-1/2 ${true ? 'right-1/3' : 'left-1/3'} grid grid-cols-5 gap-2 opacity-10`}>
                 {[...Array(25)].map((_, i) => (
                   <div key={i} className="w-2 h-2 rounded-full bg-emerald-900 dark:bg-emerald-400"></div>
                 ))}
@@ -341,7 +341,7 @@ export default function PatientDashboard({ lang, setLang, theme, setTheme, onLog
                 </div>
                 
                 {/* Doctor Image Container */}
-                <div className={`absolute bottom-0 w-[400px] hidden md:block ${lang === 'ar' ? 'left-10' : 'right-10'}`}>
+                <div className={`absolute bottom-0 w-[400px] hidden md:block ${true ? 'left-10' : 'right-10'}`}>
                   <img 
                     src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800&bg=transparent" 
                     alt="Doctor" 
@@ -493,7 +493,7 @@ export default function PatientDashboard({ lang, setLang, theme, setTheme, onLog
                  <div className={`w-24 h-24 ${isDark ? 'bg-slate-800' : 'bg-slate-100'} rounded-full flex items-center justify-center ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
                    <Clock className="w-10 h-10 animate-pulse" />
                  </div>
-                 <div className={`absolute top-0 ${lang === 'ar' ? 'right-0' : 'left-0'} w-8 h-8 rounded-full ${isDark ? 'bg-emerald-900/50 text-emerald-400' : 'bg-emerald-100 text-emerald-600'} flex items-center justify-center border-4 ${isDark ? 'border-slate-900' : 'border-white'} animate-bounce`}>
+                 <div className={`absolute top-0 ${true ? 'right-0' : 'left-0'} w-8 h-8 rounded-full ${isDark ? 'bg-emerald-900/50 text-emerald-400' : 'bg-emerald-100 text-emerald-600'} flex items-center justify-center border-4 ${isDark ? 'border-slate-900' : 'border-white'} animate-bounce`}>
                     <Heart className="w-3 h-3" />
                  </div>
               </div>

@@ -10,7 +10,7 @@ interface PrivacyPolicyProps {
 const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ isOpen, onClose, lang }) => {
   if (!isOpen) return null;
 
-  const isRTL = lang === 'ar';
+  const isRTL = true;
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
